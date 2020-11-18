@@ -56,10 +56,12 @@ const randomMessage = {
         let auxKeys = Object.keys(this.topics[chosenTopic][chosenObj]);
         let chosenAux = auxKeys[Math.floor(Math.random() * auxKeys.length)];
 
-        let chosenAdj = this.topics[chosenTopic][chosenObj][chosenAux][Math.floor(Math.random() * chosenAux.length)];
+        let chosenArr = this.topics[chosenTopic][chosenObj][chosenAux];
+        let chosenAdj = chosenArr[Math.floor(Math.random() * chosenArr.length)];
 
         console.log(`${chosenObj} ${chosenAux} ${chosenAdj}!!!`);
     }
 }
 
+module.exports = randomMessage;
 randomMessage.generate();
